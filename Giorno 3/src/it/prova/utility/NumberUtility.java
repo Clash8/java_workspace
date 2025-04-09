@@ -22,4 +22,11 @@ public class NumberUtility {
         }
         return valori;
     }
+
+    public static int[] riduciArray (int[] input, int riduzione) {
+        int[] result = new int[input.length];
+        for (int i = 0; i < result.length; i++)
+            result[i] = input[i] - riduzione;
+        return result;
+    }
 }

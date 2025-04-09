@@ -25,5 +25,25 @@ public class TestUtility {
         System.out.println();
         System.out.printf("TEST creaProgressioneNumerica.............................End%n%n");
 
+        System.out.printf("TEST riduciArray...........................................Start%n");
+
+        int[] arrayOriginale = {10, 20, 30, 40};
+        int riduzione = 5;
+        int[] arrayRidotto = NumberUtility.riduciArray(arrayOriginale, riduzione);
+
+        System.out.printf("Array originale: ");
+        for (int valore : arrayOriginale) {
+            System.out.printf("%d ", valore);
+        }
+        System.out.println();
+
+        System.out.printf("Riduzione: %d%n", riduzione);
+        System.out.printf("Array ridotto: ");
+        for (int valore : arrayRidotto) {
+            System.out.printf("%d ", valore);
+        }
+        System.out.println();
+
+        System.out.printf("TEST riduciArray...........................................End%n%n");
     }
 }

@@ -16,6 +16,11 @@ public class Televisore {
         this.pollici = pollici;
     }
 
+    @Override
+    public String toString() {
+        return marca + " " + modello + ", " + prezzo + "$ " + pollici + " pollici";
+    }
+
     public String getMarca() {
         return marca;
     }
@@ -98,4 +103,11 @@ public class Televisore {
         return media < this.prezzo;
     }
 
+    public static Televisore getMostExpensive(Televisore[] input) {
+        Televisore mostExpensive = input[0];
+        for (Televisore t : input)
+            if (t.getPrezzo() > mostExpensive.getPrezzo())
+                mostExpensive = t;
+        return mostExpensive;
+    }
 }

@@ -73,6 +73,13 @@ public class TestModel {
         System.out.println("Il televisore " + tv1.getMarca() + " è più caro della media del catalogo1? " + piuCaroDellaMedia);
         System.out.println("End.......");
         System.out.println(".......... \n");
-        
+
+        System.out.println("Test getMostExpensive");
+        System.out.println("Start.....");
+        Televisore ilPiuCaro = Televisore.getMostExpensive(catalogo1);
+        System.out.println("Il televisore più caro del catalogo è " + ilPiuCaro);
+        System.out.println("End.......");
+        System.out.println(".......... \n");
+
     }
 }

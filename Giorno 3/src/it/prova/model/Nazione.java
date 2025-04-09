@@ -36,4 +36,44 @@ public class Nazione {
     public void setAbitanti(int abitanti) {
         this.abitanti = abitanti;
     }
+
+
+    public boolean piuEstesaDi(Nazione input) {
+        return input.getSuperficieKmQ() < this.getSuperficieKmQ();
+    }
+    public boolean piuPopolosaDi(Nazione input) {
+        return input.getAbitanti() < this.getAbitanti();
+    }
+    public boolean esisteAlmenoUnaPiuEstesa(Nazione[] nazioni) {
+        for (Nazione n : nazioni)
+            if (n.getAbitanti() > this.abitanti)
+                return true;
+        return false;
+    }
+    public int dimmiQuanteSonoPiuPopolose(Nazione[] nazioni) {
+        int count = 0;
+        for (Nazione n : nazioni)
+            if (n.getSuperficieKmQ() >= this.superficieKmQ)
+                count++;
+        return count;
+    }
+    public boolean haPiuAbitantiDiTutteLeAltre(Nazione[] nazioni) {
+        for (Nazione n : nazioni)
+            if (n.getAbitanti() < this.abitanti)
+                return false;
+        return true;
+    }
+    public boolean hannoTutteLaMiaStessaIniziale(Nazione[] nazioni) {
+        for (Nazione n : nazioni)
+            if (n.getDenominazione().charAt(0) != this.denominazione.charAt(0))
+                return false;
+        return true;
+    }
+    public boolean eAlDiSopraDellaMediaComeSuperficie(Nazione[] nazioni) {
+        float media = 0;
+        for (Nazione n : nazioni)
+            media += (float) n.getSuperficieKmQ();
+        media /= nazioni.length;
+        return media >= this.superficieKmQ;
+    }
 }

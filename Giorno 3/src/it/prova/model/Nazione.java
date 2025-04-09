@@ -53,7 +53,7 @@ public class Nazione {
     public int dimmiQuanteSonoPiuPopolose(Nazione[] nazioni) {
         int count = 0;
         for (Nazione n : nazioni)
-            if (n.getSuperficieKmQ() >= this.superficieKmQ)
+            if (n.getAbitanti() >= this.abitanti)
                 count++;
         return count;
     }
@@ -74,6 +74,6 @@ public class Nazione {
         for (Nazione n : nazioni)
             media += (float) n.getSuperficieKmQ();
         media /= nazioni.length;
-        return media >= this.superficieKmQ;
+        return media <= this.superficieKmQ;
     }
 }

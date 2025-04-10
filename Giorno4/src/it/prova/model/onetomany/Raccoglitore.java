@@ -61,5 +61,11 @@ public class Raccoglitore {
         this.setFogli(arrayCopy);
         return true;
     }
+    public boolean esisteAlmenoUnFoglioAQuadretti() {
+        for (Foglio f : fogli)
+            if (f.getTipologia().equalsIgnoreCase("quadretti"))
+                return true;
+        return false;
+    }
 
 }

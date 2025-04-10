@@ -90,14 +90,11 @@ public class Persona {
         for (Persona persona : elenco)
             if (persona.getEta() > 60)
                 count++;
-
         Indirizzo[] over60Addresses = new Indirizzo[count];
         count = 0;
         for (Persona persona : elenco)
-            if (persona.getEta() > 60) {
-                over60Addresses[count] = persona.getIndirizzo();
-                count++;
-            }
+            if (persona.getEta() > 60)
+                over60Addresses[count++] = persona.getIndirizzo();
         return over60Addresses;
     }
 

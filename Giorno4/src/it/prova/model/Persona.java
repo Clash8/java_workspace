@@ -98,4 +98,18 @@ public class Persona {
         return over60Addresses;
     }
 
+    public int quantiMieiOmonimiNellaMiaStessaCitta(Persona[] elencoInput) {
+        int count = 0;
+        for (Persona persona : elencoInput)
+            if (persona.getNome().equals(this.nome) && persona.getIndirizzo().getCitta().equals(this.indirizzo.getCitta()))
+                count++;
+        return count;
+    }
+    public boolean almenoLaMetaAbitanoNellaMiaStessaVia(Persona[] elencoInput) {
+        int count = 0;
+        for (Persona persona : elencoInput)
+            if (persona.getIndirizzo().getCitta().equals(this.indirizzo.getCitta()) && persona.getIndirizzo().getVia().equals(this.indirizzo.getVia()))
+                count++;
+        return count >= elencoInput.length/2;
+    }
 }

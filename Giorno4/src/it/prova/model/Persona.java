@@ -70,4 +70,18 @@ public class Persona {
                 return false;
         return true;
     }
+
+    public int quantiCoabitanoNelMioStessoPalazzo(Persona[] elencoInput) {
+        int count = 0;
+        for (Persona p : elencoInput)
+            if (p.getIndirizzo().getCitta().equalsIgnoreCase(this.indirizzo.getCitta()) &&
+                    p.getIndirizzo().getVia().equalsIgnoreCase(this.indirizzo.getVia()) &&
+                    p.getIndirizzo().getNumeroCivico().equalsIgnoreCase(this.indirizzo.getNumeroCivico()))
+                count++;
+        return count;
+    }
+
+    public void nuovoCoinquilino(Persona nuovoC) {
+        nuovoC.setIndirizzo(this.indirizzo);
+    }
 }

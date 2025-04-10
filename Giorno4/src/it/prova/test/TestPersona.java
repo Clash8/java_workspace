@@ -5,7 +5,7 @@ public class TestPersona {
     public static void main(String[] args) {
         Indirizzo indirizzo = new Indirizzo("Via Mosca", "52", "Roma");
 
-        Persona me = new Persona("Matteo", "Castobaldo", 30, indirizzo);
+        Persona me = new Persona("Matteo", "Castobaldo", 21, indirizzo);
 
         System.out.println(me);
 
@@ -32,5 +32,18 @@ public class TestPersona {
         System.out.println("TEST sonoTuttiPiuAnziani............START");
         System.out.println("sono tutti piu anziani di me? " + me.sonoTuttiPiuAnziani(elenco));
         System.out.println("TEST sonoTuttiPiuAnziani............END");
+
+
+        System.out.println("TEST quantiCoabitanoNelMioStessoPalazzo............START");
+        System.out.printf("Ci sono %d persone che abitano nel mio stesso palazzo%n", me.quantiCoabitanoNelMioStessoPalazzo(elenco));
+        System.out.println("TEST quantiCoabitanoNelMioStessoPalazzo............END");
+
+
+        System.out.println("TEST nuovoCoinquilino............START");
+        Persona nuovoC = new Persona("Marco", "detto er caciotta", 23345);
+        me.nuovoCoinquilino(nuovoC);
+        System.out.printf("io abito a %s e adesso anche il mio coinquilino %s", me.getIndirizzo(), nuovoC);
+        System.out.println("TEST nuovoCoinquilino............END");
+
     }
 }

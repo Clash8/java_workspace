@@ -10,10 +10,10 @@ public class TestPersona {
         System.out.println(me);
 
         Persona[] elenco = {
-                new Persona("Luca", "Bianchi", 25, new Indirizzo("Via Milano", "10", "Milano")),
-                new Persona("Giulia", "Verdi", 40, new Indirizzo("Via Napoli", "15", "Napoli")),
-                new Persona("Marco", "Neri", 35, new Indirizzo("Via Torino", "20", "Torino")),
-                new Persona("Anna", "Rossi", 28, new Indirizzo("Via Firenze", "5", "Firenze")),
+                new Persona("Luca", "Bianchi", 60, new Indirizzo("Via Milano", "10", "Milano")),
+                new Persona("Giulia", "Verdi", 61, new Indirizzo("Via Napoli", "15", "Napoli")),
+                new Persona("Marco", "Neri", 62, new Indirizzo("Via Torino", "20", "Torino")),
+                new Persona("Anna", "Rossi", 65, new Indirizzo("Via Firenze", "5", "Firenze")),
                 new Persona("Paolo", "Gialli", 50, new Indirizzo("Via Venezia", "8", "Venezia")),
                 new Persona("Sara", "Blu", 22, new Indirizzo("Via Genova", "12", "Genova")),
                 new Persona("Elena", "Marrone", 45, new Indirizzo("Via Bologna", "18", "Bologna")),
@@ -31,19 +31,30 @@ public class TestPersona {
 
         System.out.println("TEST sonoTuttiPiuAnziani............START");
         System.out.println("sono tutti piu anziani di me? " + me.sonoTuttiPiuAnziani(elenco));
-        System.out.println("TEST sonoTuttiPiuAnziani............END");
+        System.out.println("TEST sonoTuttiPiuAnziani............END\n");
 
 
         System.out.println("TEST quantiCoabitanoNelMioStessoPalazzo............START");
         System.out.printf("Ci sono %d persone che abitano nel mio stesso palazzo%n", me.quantiCoabitanoNelMioStessoPalazzo(elenco));
-        System.out.println("TEST quantiCoabitanoNelMioStessoPalazzo............END");
+        System.out.println("TEST quantiCoabitanoNelMioStessoPalazzo............END\n");
 
 
         System.out.println("TEST nuovoCoinquilino............START");
-        Persona nuovoC = new Persona("Marco", "detto er caciotta", 23345);
+        Persona nuovoC = new Persona("Marco", "detto er caciotta", 23345, new Indirizzo());
         me.nuovoCoinquilino(nuovoC);
-        System.out.printf("io abito a %s e adesso anche il mio coinquilino %s", me.getIndirizzo(), nuovoC);
-        System.out.println("TEST nuovoCoinquilino............END");
+        System.out.printf("io abito a %s e adesso anche il mio coinquilino %s%n", me.getIndirizzo(), nuovoC);
+        System.out.println("TEST nuovoCoinquilino............END\n");
+
+
+        System.out.println("TEST getOver60Addresses............START");
+        Indirizzo[] over60Addresses = Persona.getOver60Addresses(elenco);
+        System.out.println("questi sono gli indirizzi delle persone over 60 che sono: " + over60Addresses.length);
+        for (Indirizzo address : over60Addresses) {
+            System.out.println(address);
+        }
+        System.out.println("TEST getOver60Addresses............END\n");
+
+
 
     }
 }

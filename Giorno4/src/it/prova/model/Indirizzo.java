@@ -5,7 +5,7 @@ public class Indirizzo {
     private String numeroCivico;
     private String citta;
 
-    //complete the constructor
+    public Indirizzo() {}
     public Indirizzo(String via, String numeroCivico, String citta) {
         this.via = via;
         this.numeroCivico = numeroCivico;
@@ -29,15 +29,18 @@ public class Indirizzo {
     public void setCitta(String citta) {
         this.citta = citta;
     }
+
     @Override
     public String toString() {
         return "Indirizzo [via=" + via + ", numeroCivico=" + numeroCivico + ", citta=" + citta + "]";
     }
 
     public boolean equals(Indirizzo indirizzo) {
-        return (this.via.equalsIgnoreCase(indirizzo.getVia()) &&
-                this.numeroCivico.equalsIgnoreCase(indirizzo.getNumeroCivico()) &&
-                this.citta.equalsIgnoreCase(indirizzo.getCitta()));
+        return (
+                this.via.           equalsIgnoreCase(indirizzo.getVia()) &&
+                this.numeroCivico.  equalsIgnoreCase(indirizzo.getNumeroCivico()) &&
+                this.citta.         equalsIgnoreCase(indirizzo.getCitta())
+        );
     }
 
 }

@@ -80,6 +80,25 @@ public class Persona {
     }
 
     public void nuovoCoinquilino(Persona nuovoC) {
-        nuovoC.setIndirizzo(this.indirizzo);
+        nuovoC.getIndirizzo().setCitta(this.indirizzo.getCitta());
+        nuovoC.getIndirizzo().setVia(this.indirizzo.getVia());
+        nuovoC.getIndirizzo().setNumeroCivico(this.indirizzo.getNumeroCivico());
     }
+
+    public static Indirizzo[] getOver60Addresses(Persona[] elenco) {
+        int count = 0;
+        for (Persona persona : elenco)
+            if (persona.getEta() > 60)
+                count++;
+
+        Indirizzo[] over60Addresses = new Indirizzo[count];
+        count = 0;
+        for (Persona persona : elenco)
+            if (persona.getEta() > 60) {
+                over60Addresses[count] = persona.getIndirizzo();
+                count++;
+            }
+        return over60Addresses;
+    }
+
 }

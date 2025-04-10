@@ -34,4 +34,10 @@ public class Indirizzo {
         return "Indirizzo [via=" + via + ", numeroCivico=" + numeroCivico + ", citta=" + citta + "]";
     }
 
+    public boolean equals(Indirizzo indirizzo) {
+        return (this.via.equalsIgnoreCase(indirizzo.getVia()) &&
+                this.numeroCivico.equalsIgnoreCase(indirizzo.getNumeroCivico()) &&
+                this.citta.equalsIgnoreCase(indirizzo.getCitta()));
+    }
+
 }

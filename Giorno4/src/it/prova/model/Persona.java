@@ -105,6 +105,7 @@ public class Persona {
                 count++;
         return count;
     }
+
     public boolean almenoLaMetaAbitanoNellaMiaStessaVia(Persona[] elencoInput) {
         int count = 0;
         for (Persona persona : elencoInput)
@@ -112,4 +113,5 @@ public class Persona {
                 count++;
         return count >= elencoInput.length/2;
     }
+
 }

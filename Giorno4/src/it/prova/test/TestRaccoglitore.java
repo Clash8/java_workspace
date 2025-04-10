@@ -14,5 +14,17 @@ public class TestRaccoglitore {
         Raccoglitore raccoglitore = new Raccoglitore("Blu", 5, fogli);
 
         System.out.println(raccoglitore);
+
+        Foglio nuovoFoglio = new Foglio("Nuovo", "A4");
+
+        raccoglitore.addToFogli(nuovoFoglio);
+
+        System.out.println(raccoglitore);
+
+        raccoglitore.removeFromFogli(1);
+
+        System.out.println(raccoglitore);
+
+
     }
 }

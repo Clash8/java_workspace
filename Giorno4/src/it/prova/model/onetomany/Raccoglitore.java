@@ -31,11 +31,35 @@ public class Raccoglitore {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Raccoglitore [colore=").append(colore).append(", spessore=").append(spessore).append(", fogli=");
+        sb.append("Raccoglitore [colore=").append(colore).append(", spessore=").append(spessore).append(", fogli=\n");
         for (Foglio f : fogli) {
-            sb.append(f.toString()).append(", ");
+            sb.append(f).append(", \n");
         }
         sb.append("]");
         return sb.toString();
     }
+    public void addToFogli(Foglio foglio) {
+        Foglio[] arrayCopy = new Foglio[this.fogli.length + 1];
+        for (int i = 0; i < this.fogli.length; i++) {
+            arrayCopy[i] = this.fogli[i];
+        }
+        arrayCopy[this.fogli.length] = foglio;
+
+        this.setFogli(arrayCopy);
+    }
+
+    public boolean removeFromFogli(int index) {
+        if (index < 0 || index >= this.fogli.length) return false;
+
+        Foglio[] arrayCopy = new Foglio[this.fogli.length - 1];
+
+        int count = 0;
+        for (int i = 0; i < this.fogli.length; i++)
+            if (i != index)
+                arrayCopy[count++] = this.fogli[i];
+
+        this.setFogli(arrayCopy);
+        return true;
+    }
+
 }

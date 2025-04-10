@@ -74,4 +74,25 @@ public class Spettatore {
     }
 
 
+    public static int contaQuantiSenzaBiglietto(Spettatore[] elencoSpettatori) {
+        int count = 0;
+        for (Spettatore sp : elencoSpettatori)
+            if (sp.getBiglietto() == null)
+                count++;
+        return count;
+    }
+    public int contaQuantiNellaMiaStessaFila(Spettatore[] elencoSpettatori) {
+        int count = 0;
+        for (Spettatore sp : elencoSpettatori)
+            if (sp.getBiglietto().getLetteraFila() == this.biglietto.getLetteraFila())
+                count++;
+        return count;
+    }
+    public boolean eIlPiuCaroTraIBigliettiDeiPaganti(Spettatore[] elencoSpettatoriPaganti) {
+        for (Spettatore sp : elencoSpettatoriPaganti)
+            if (sp.getBiglietto().getPrezzo() > this.biglietto.getPrezzo())
+                return false;
+        return true;
+    }
+
 }

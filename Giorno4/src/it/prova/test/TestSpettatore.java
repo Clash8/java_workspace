@@ -45,5 +45,28 @@ public class TestSpettatore {
         System.out.println("TEST bigliettoAncoraInvenduto.........................END\n");
 
 
+        System.out.println("TEST contaQuantiSenzaBiglietto........................START");
+        System.out.println("Il numero di spettatori senza biglietto e': " + Spettatore.contaQuantiSenzaBiglietto(elencoSpettatori));
+        System.out.println("TEST contaQuantiSenzaBiglietto.........................END\n");
+
+
+
+        System.out.println("TEST contaQuantiNellaMiaStessaFila........................START");
+        System.out.println("Il numero di spettatori nella mia stessa fila e': " + me.contaQuantiNellaMiaStessaFila(elencoSpettatori));
+        System.out.println("TEST contaQuantiNellaMiaStessaFila.........................END\n");
+
+
+
+        System.out.println("TEST eIlPiuCaroTraIBigliettiDeiPaganti........................START");
+        System.out.println("Il biglietto e' il piu' caro tra i biglietti dei paganti? " + me.eIlPiuCaroTraIBigliettiDeiPaganti(elencoSpettatori));
+        System.out.println("TEST eIlPiuCaroTraIBigliettiDeiPaganti.........................END\n");
+
+
+
+        System.out.println("TEST sonoTuttiBigliettiPerLoSpettacoloIntitolato........................START");
+        System.out.println("Tutti i biglietti sono per lo spettacolo intitolato 'Il grande spettacolo'? " + Biglietto.sonoTuttiBigliettiPerLoSpettacoloIntitolato(biglietti, "Il grande spettacolo"));
+        System.out.println("TEST contaQuantiSenzaBiglietto.........................END\n");
+
+
     }
 }

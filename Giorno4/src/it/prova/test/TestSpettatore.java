@@ -115,6 +115,5 @@ public class TestSpettatore {
         System.out.println("Tutti i biglietti sono per lo spettacolo intitolato 'Il grande spettacolo'? " + Biglietto.sonoTuttiBigliettiPerLoSpettacoloIntitolato(biglietti, "Il grande spettacolo"));
         System.out.println("TEST contaQuantiSenzaBiglietto.........................END\n");
 
-
     }
 }

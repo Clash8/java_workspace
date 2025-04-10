@@ -7,6 +7,7 @@ public class Persona {
     private String cognome;
     private int eta;
     private Indirizzo indirizzo;
+    private Telefono telefono;
 
     //create a constructor empty
     public Persona() {}

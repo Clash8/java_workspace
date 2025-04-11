@@ -28,6 +28,7 @@ public class Raccoglitore {
     public void setFogli(Foglio[] fogli) {
         this.fogli = fogli;
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -61,11 +62,24 @@ public class Raccoglitore {
         this.setFogli(arrayCopy);
         return true;
     }
+
     public boolean esisteAlmenoUnFoglioAQuadretti() {
         for (Foglio f : fogli)
             if (f.getTipologia().equalsIgnoreCase("quadretti"))
                 return true;
         return false;
+    }
+
+    public int quantiFogliDiAltaQualita() {
+        int count = 0;
+        for (Foglio f : fogli)
+            if (f.getQualita().equalsIgnoreCase("alta"))
+                count++;
+        return count;
+    }
+
+    public boolean stessoColoreENumeroFogliDi(Raccoglitore altroRaccoglitore) {
+        return altroRaccoglitore.getFogli().length == this.fogli.length && altroRaccoglitore.getFogli().length == this.fogli.length;
     }
 
 }

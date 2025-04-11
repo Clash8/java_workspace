@@ -25,7 +25,7 @@ public class TestRaccoglitore {
 
         System.out.println(raccoglitore);
 
-//        raccoglitore.removeFromFogli(1);
+        raccoglitore.removeFromFogli(1);
 
         System.out.println(raccoglitore);
 
@@ -34,8 +34,25 @@ public class TestRaccoglitore {
                 new Foglio("Media", "quadretti"),
                 new Foglio("Bassa", "A5")
         };
+        raccoglitore.setFogli(fogli);
 
+        Raccoglitore raccoglitore1 = new Raccoglitore("Blu", 5,
+                new Foglio[] {
+                        new Foglio("Alta", "A4"),
+                        new Foglio("Media", "quadretti"),
+                        new Foglio("Bassa", "A5")
+                });
+        System.out.println("TEST esisteAlmenoUnFoglioAQuadretti....................START");
         System.out.println("Esiste almeno un foglio a quadretti? " + raccoglitore.esisteAlmenoUnFoglioAQuadretti());
+        System.out.println("TEST esisteAlmenoUnFoglioAQuadretti....................END\n");
+
+        System.out.println("TEST esisteAlmenoUnFoglioAQuadretti....................START");
+        System.out.println("Esiste almeno un foglio di qualita' alta? " + raccoglitore.quantiFogliDiAltaQualita());
+        System.out.println("TEST esisteAlmenoUnFoglioAQuadretti....................END\n");
+
+        System.out.println("TEST stessoColoreENumeroFogliDi....................START");
+        System.out.println("il raccoglitore ha lo stesso numero di fogli e colore uguale a raccoglitore1? " + raccoglitore.stessoColoreENumeroFogliDi(raccoglitore1));
+        System.out.println("TEST stessoColoreENumeroFogliDi....................END\n");
 
 
     }

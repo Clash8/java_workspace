@@ -12,5 +12,9 @@ public class TestLavoratore {
 
         Lavoratore boldi = new Lavoratore("Massimo", "Boldi");
         System.out.println(boldi.getNome() + " " + boldi.getCognome() + ": " + boldi.percepisco());
+
+        // getclassgetname
+        System.out.println("Totti è un " + totti.getClass().getName());
+        System.out.println();
     }
 }

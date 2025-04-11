@@ -11,6 +11,7 @@ public class Volontario extends Lavoratore{
         // vero?
         this.nomeAssociazione = nomeAssociazione;
     }
+
     @Override
     public String percepisco() {
         return this.nomeAssociazione+ " E’ NO PROFIT";

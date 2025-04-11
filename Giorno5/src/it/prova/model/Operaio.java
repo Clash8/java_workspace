@@ -8,6 +8,7 @@ public class Operaio extends Lavoratore{
         super(nome, cognome);
         this.Salario = Salario;
     }
+
     @Override
     public String percepisco() {
         return "io percepisco " + Salario + " euro";

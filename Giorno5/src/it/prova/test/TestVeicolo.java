@@ -16,10 +16,9 @@ public class TestVeicolo {
         System.out.println("Marca del veicolo generico: " + veicoloGenerico.getMarca());
         veicoloGenerico.suono();
 
-        // getclassgetname
-        System.out.println("Bici è un " + bici.getClass().getName());
-        System.out.println("Auto è un " + auto.getClass().getName());
-        System.out.println("Veicolo generico è un " + veicoloGenerico.getClass().getName());
+        System.out.println("Bici è un " + bici.getClass().getSimpleName());
+        System.out.println("Auto è un " + auto.getClass().getSimpleName());
+        System.out.println("Veicolo generico è un " + veicoloGenerico.getClass().getSimpleName());
 
     }
 }

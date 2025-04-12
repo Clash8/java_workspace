@@ -25,4 +25,13 @@ public class Lavoratore {
     public String percepisco() {
         return "N.D.";
     }
+
+    public static int contaQuantiPadri(Lavoratore[] input) {
+        int count = 0;
+        for (Lavoratore lavoratore : input)
+            if (!(lavoratore instanceof Operaio)
+                    && !(lavoratore instanceof Volontario))
+                count++;
+        return count;
+    }
 }

@@ -4,7 +4,7 @@ import it.prova.model.*;
 public class TestLavoratore {
     public static void main(String[] args) {
 
-        Lavoratore totti = new Operaio("Enrico", "Brignano", 1500);
+        Lavoratore totti = new Operaio("Francesco", "Totti", 1500);
         System.out.println(totti.getNome() + " " + totti.getCognome() + ": " + totti.percepisco());
 
         Lavoratore fiorello = new Volontario("Rosario", "Fiorello", "Croce Rossa");
@@ -15,6 +15,11 @@ public class TestLavoratore {
 
         // getclassgetname
         System.out.println("Totti è un " + totti.getClass().getName());
-        System.out.println();
+
+        Lavoratore[] arrayLavoratori = {totti, fiorello, boldi};
+
+        System.out.println("Ci sono " + Lavoratore.contaQuantiPadri(arrayLavoratori) + " padri");
+        System.out.println("Ci sono " + Operaio.contaQuantiFigli(arrayLavoratori) + " operai");
+
     }
 }

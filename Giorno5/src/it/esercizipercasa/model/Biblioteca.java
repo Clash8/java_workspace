@@ -75,12 +75,10 @@ public class Biblioteca {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Bibioteca con " + materiali.length + " materiali:\n");
+        String result = "Biblioteca con " + materiali.length + " materiali:\n";
         for (MaterialeBiblioteca m : materiali) {
-            sb.append("\t");
-            sb.append(m.toString());
+            result += "\t" + m.toString();
         }
-        return sb.toString();
+        return result;
     }
-
 }

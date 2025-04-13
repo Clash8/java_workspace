@@ -18,7 +18,7 @@ public class TestBiblioteca {
         biblioteca.aggiungiMateriale(libro3);
         System.out.println(biblioteca);
 
-        Biblioteca bibliotecaPerCerca = new Biblioteca(biblioteca.cercaMaterialePerTitolo("time"));
+        Biblioteca bibliotecaPerCerca = biblioteca.cercaMaterialePerTitolo("time");
         System.out.println("Cerco \"time\":");
         System.out.println(bibliotecaPerCerca);
 
@@ -27,12 +27,12 @@ public class TestBiblioteca {
         biblioteca.getMateriali()[3].prestito();
         biblioteca.getMateriali()[4].prestito();
 
-        Biblioteca materialiDisponibili = new Biblioteca(biblioteca.elencaMaterialiDisponibili());
+        Biblioteca materialiDisponibili = biblioteca.elencaMaterialiDisponibili();
         System.out.println("Materiali disponibili:");
         System.out.println(materialiDisponibili);
 
 
-        Biblioteca materialiInPrestito = new Biblioteca(biblioteca.elencaMaterialiInPrestito());
+        Biblioteca materialiInPrestito = biblioteca.elencaMaterialiInPrestito();
         System.out.println("Materiali in prestito:");
         System.out.println(materialiInPrestito);
         

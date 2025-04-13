@@ -23,7 +23,7 @@ public class Biblioteca {
         materiali = nuoviMateriali;
 
     }
-    public MaterialeBiblioteca[] cercaMaterialePerTitolo(String titolo) {
+    public Biblioteca cercaMaterialePerTitolo(String titolo) {
         int count = 0;
         for (MaterialeBiblioteca m : materiali) {
             if (m.getTitolo().equalsIgnoreCase(titolo)) {
@@ -37,10 +37,10 @@ public class Biblioteca {
                 risultato[count++] = m;
             }
         }
-        return risultato;
+        return new Biblioteca(risultato);
     }
 
-    public MaterialeBiblioteca[] elencaMaterialiDisponibili() {
+    public Biblioteca elencaMaterialiDisponibili() {
         int count = 0;
         for (MaterialeBiblioteca m : materiali) {
             if (m.isDisponibile()) {
@@ -54,9 +54,9 @@ public class Biblioteca {
                 risultato[count++] = m;
             }
         }
-        return risultato;
+        return new Biblioteca(risultato);
     }
-    public MaterialeBiblioteca[] elencaMaterialiInPrestito() {
+    public Biblioteca elencaMaterialiInPrestito() {
         int count = 0;
         for (MaterialeBiblioteca m : materiali) {
             if (!m.isDisponibile()) {
@@ -70,7 +70,7 @@ public class Biblioteca {
                 risultato[count++] = m;
             }
         }
-        return risultato;
+        return new Biblioteca(risultato);
     }
 
     @Override

@@ -1,7 +1,7 @@
 package it.esercizipercasa.model;
 
 public class MaterialeBiblioteca {
-    //Attributi: titolo, autore, codiceIdentificativo, disponibile
+
     protected String titolo;
     protected String autore;
     protected String codiceIdentificativo;
@@ -15,7 +15,7 @@ public class MaterialeBiblioteca {
         this.codiceIdentificativo = codiceIdentificativo;
         this.disponibile = true; // Inizialmente disponibile
     }
-    //Metodi
+
     public String getTitolo() {
         return titolo;
     }
@@ -40,7 +40,6 @@ public class MaterialeBiblioteca {
     public void setCodiceIdentificativo(String codiceIdentificativo) {
         this.codiceIdentificativo = codiceIdentificativo;
     }
-
 
     public void prestito() {
         disponibile = false;

@@ -12,6 +12,7 @@ public class FiguraGeometrica {
     public void setLato(float lato) {
         this.lato = lato;
     }
+
     public float calcolaArea() {
         return -1;
     }

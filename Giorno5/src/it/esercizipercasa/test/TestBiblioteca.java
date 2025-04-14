@@ -16,6 +16,7 @@ public class TestBiblioteca {
         System.out.println(biblioteca);
         MaterialeBiblioteca libro3 = new Libro("Harry Potter e la Pietra Filosofale", "J.K. Rowling", "4455667788", 300, "Fantasy");
         biblioteca.aggiungiMateriale(libro3);
+        System.out.println("aggiungo un " + libro3);
         System.out.println(biblioteca);
 
         Biblioteca bibliotecaPerCerca = biblioteca.cercaMaterialePerTitolo("time");

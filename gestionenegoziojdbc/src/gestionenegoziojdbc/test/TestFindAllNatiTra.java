@@ -1,11 +1,11 @@
-package it.prova.lavoratorejdbc.test;
+package gestionenegoziojdbc.test;
 
 import it.prova.lavoratorejdbc.dao.LavoratoreDAO;
 import it.prova.lavoratorejdbc.model.Lavoratore;
 
 import java.text.ParseException;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 public class TestFindAllNatiTra {
     public static void main(String[] args) throws ParseException {

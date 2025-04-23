@@ -196,7 +196,7 @@ public class TelevisoreDAOImpl extends AbstractMySQLDAO implements TelevisoreDAO
 		return result;
 	}
 
-	//voglio il televisore più grande
+	//vvoglio il televisore più grande
 	public Televisore getBigger() throws Exception {
 		// prima di tutto cerchiamo di capire se possiamo effettuare le operazioni
 		if (isNotActive())
@@ -225,6 +225,7 @@ public class TelevisoreDAOImpl extends AbstractMySQLDAO implements TelevisoreDAO
 		}
 		return result;
 	}
+	// voglio sapere quanti televisori sono stati prodotti in un intervallo di date
 	public int quantiTelTraDate(LocalDate from, LocalDate to) throws Exception {
 		// prima di tutto cerchiamo di capire se possiamo effettuare le operazioni
 		if (isNotActive())
@@ -249,10 +250,12 @@ public class TelevisoreDAOImpl extends AbstractMySQLDAO implements TelevisoreDAO
 		return result;
 	}
 
+	// voglio la lista distinta di marche dei televisori prodotti negli ultimi sei mesi
 	public List<String> list30anni() throws Exception {
 		// prima di tutto cerchiamo di capire se possiamo effettuare le operazioni
-		if (isNotActive())
+		if (isNotActive()) {
 			throw new Exception("Connessione non attiva. Impossibile effettuare operazioni DAO.");
+		}
 
 		List<String> result = new ArrayList<>();
 
@@ -268,8 +271,4 @@ public class TelevisoreDAOImpl extends AbstractMySQLDAO implements TelevisoreDAO
 		}
 		return result;
 	}
-
-
-	//voglio la lista distinta di marche dei televisori prodotti negli ultimi sei mesi
-
 }

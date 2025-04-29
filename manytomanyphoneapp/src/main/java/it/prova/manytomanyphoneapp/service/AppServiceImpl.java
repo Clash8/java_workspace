@@ -15,6 +15,11 @@ public class AppServiceImpl implements AppService {
 	private AppDAO appDAO;
 
 	@Override
+	public void setAppDAO(AppDAO appDAO) {
+		this.appDAO = appDAO;
+	}
+
+	@Override
 	public List<App> listAll() throws Exception {
 		// questo è come una connection
 		EntityManager entityManager = EntityManagerUtil.getEntityManager();
@@ -127,11 +132,4 @@ public class AppServiceImpl implements AppService {
 			EntityManagerUtil.closeEntityManager(entityManager);
 		}
 	}
-
-
-	@Override
-	public void setAppDAO(AppDAO appDAO) {
-		this.appDAO = appDAO;
-	}
-
 }

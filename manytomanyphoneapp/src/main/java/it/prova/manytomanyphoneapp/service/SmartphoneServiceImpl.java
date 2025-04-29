@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import it.prova.manytomanyphoneapp.dao.EntityManagerUtil;
+import it.prova.manytomanyphoneapp.dao.app.AppDAO;
 import it.prova.manytomanyphoneapp.dao.smartphone.SmartphoneDAO;
 import it.prova.manytomanyphoneapp.model.Smartphone;
 import it.prova.manytomanyphoneapp.model.App;
@@ -12,10 +13,15 @@ import it.prova.manytomanyphoneapp.model.App;
 public class SmartphoneServiceImpl implements SmartphoneService {
 
 	private SmartphoneDAO smartphoneDAO;
+	private AppDAO appDAO;
 
 	@Override
 	public void setSmartphoneDAO(SmartphoneDAO smartphoneDAO) {
 		this.smartphoneDAO = smartphoneDAO;
+	}
+	@Override
+	public void setAppDAO(AppDAO appDAO) {
+		this.appDAO = appDAO;
 	}
 
 	@Override
@@ -147,6 +153,88 @@ public class SmartphoneServiceImpl implements SmartphoneService {
 			Smartphone smartphoneInstance = smartphoneDAO.get(idSmartphone);
 			smartphoneDAO.unlinkAppsFromSmartphone(smartphoneInstance);
 			smartphoneDAO.delete(smartphoneInstance);
+
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		} finally {
+			EntityManagerUtil.closeEntityManager(entityManager);
+		}
+	}
+
+	@Override
+	public void aggionaSmartphone(Long idSmartphone, String versioneOS) throws Exception {
+		// questo è come una connection
+		EntityManager entityManager = EntityManagerUtil.getEntityManager();
+
+		try {
+			// questo è come il MyConnection.getConnection()
+			entityManager.getTransaction().begin();
+
+			// uso l'injection per il dao
+			smartphoneDAO.setEntityManager(entityManager);
+
+			// eseguo quello che realmente devo fare
+			Smartphone smartphoneInstance = smartphoneDAO.get(idSmartphone);
+			smartphoneInstance.setVersioneOS(versioneOS);
+			smartphoneDAO.update(smartphoneInstance); // superfluo??
+
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		} finally {
+			EntityManagerUtil.closeEntityManager(entityManager);
+		}
+	}
+	@Override
+	public void installaAppSuSmartphone(Long idSmartphone, Long idApp) throws Exception {
+		// questo è come una connection
+		EntityManager entityManager = EntityManagerUtil.getEntityManager();
+
+		try {
+			// questo è come il MyConnection.getConnection()
+			entityManager.getTransaction().begin();
+
+			// uso l'injection per il dao
+			smartphoneDAO.setEntityManager(entityManager);
+
+			// eseguo quello che realmente devo fare
+			Smartphone smartphoneInstance = smartphoneDAO.get(idSmartphone);
+			App appInstance = appDAO.get(idApp);
+			smartphoneInstance.getApp().add(appInstance);
+			smartphoneDAO.update(smartphoneInstance); // superfluo??
+
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		} finally {
+			EntityManagerUtil.closeEntityManager(entityManager);
+		}
+	}
+
+	@Override
+	public void disinstallaAppDaSmartphone(Long idSmartphone, Long idApp) throws Exception {
+		// questo è come una connection
+		EntityManager entityManager = EntityManagerUtil.getEntityManager();
+
+		try {
+			// questo è come il MyConnection.getConnection()
+			entityManager.getTransaction().begin();
+
+			// uso l'injection per il dao
+			smartphoneDAO.setEntityManager(entityManager);
+
+			// eseguo quello che realmente devo fare
+			Smartphone smartphoneInstance = smartphoneDAO.get(idSmartphone);
+			App appInstance = appDAO.get(idApp);
+			smartphoneInstance.getApp().remove(appInstance);
+			smartphoneDAO.update(smartphoneInstance); // superfluo??
 
 			entityManager.getTransaction().commit();
 		} catch (Exception e) {

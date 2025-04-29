@@ -7,8 +7,6 @@ import it.prova.manytomanyphoneapp.service.SmartphoneService;
 import it.prova.manytomanyphoneapp.service.AppService;
 import it.prova.manytomanyphoneapp.service.MyServiceFactory;
 
-import java.util.Date;
-
 public class MyTest {
 
 	public static void main(String[] args) {
@@ -72,8 +70,7 @@ public class MyTest {
 		System.out.println(".......testAggionamentoSmartphone inizio.............");
 
 		Smartphone smartphoneInstance = smartphoneServiceInstance.caricaSingoloElemento(1L);
-		smartphoneInstance.setVersioneOS("versioneOS2");
-		smartphoneServiceInstance.aggiorna(smartphoneInstance);
+		smartphoneServiceInstance.aggionaSmartphone(smartphoneInstance.getId(), "versioneOS2");
 		if (!smartphoneInstance.getVersioneOS().equals("versioneOS2"))
 			throw new RuntimeException("testAggionamentoSmartphone fallito ");
 
@@ -109,8 +106,8 @@ public class MyTest {
 
 		Smartphone smartphoneInstance = smartphoneServiceInstance.caricaSingoloElemento(1L);
 		App appInstance = appServiceInstance.caricaSingoloElemento(1L);
-		smartphoneInstance.getApp().add(appInstance);
-		smartphoneServiceInstance.aggiorna(smartphoneInstance);
+		smartphoneServiceInstance.installaAppSuSmartphone(smartphoneInstance.getId(), appInstance.getId());
+
 		if (!smartphoneInstance.getApp().contains(appInstance))
 			throw new RuntimeException("testInstallazioneAppSuSmartphone fallito ");
 
@@ -121,8 +118,7 @@ public class MyTest {
 
 		Smartphone smartphoneInstance = smartphoneServiceInstance.caricaSingoloElemento(1L);
 		App appInstance = appServiceInstance.caricaSingoloElemento(1L);
-		smartphoneInstance.getApp().remove(appInstance);
-		smartphoneServiceInstance.aggiorna(smartphoneInstance);
+		smartphoneServiceInstance.disinstallaAppDaSmartphone(smartphoneInstance.getId(), appInstance.getId());
 		if (smartphoneInstance.getApp().contains(appInstance))
 			throw new RuntimeException("testDisinstallazioneAppDaSmartphone fallito ");
 
@@ -133,7 +129,7 @@ public class MyTest {
 		System.out.println(".......testRimozioneSmartphone inizio.............");
 
 		Smartphone smartphoneInstance = smartphoneServiceInstance.caricaSingoloElemento(1L);
-		smartphoneServiceInstance.rimuovi(smartphoneInstance.getId());
+		smartphoneServiceInstance.scollegaERimuoviSmartphone(smartphoneInstance.getId());
 		if (smartphoneServiceInstance.caricaSingoloElemento(smartphoneInstance.getId()) != null)
 			throw new RuntimeException("testRimozioneSmartphone fallito ");
 

@@ -2,9 +2,9 @@ package it.prova.manytomanyphoneapp.service;
 
 import java.util.List;
 
+import it.prova.manytomanyphoneapp.dao.app.AppDAO;
 import it.prova.manytomanyphoneapp.dao.smartphone.SmartphoneDAO;
 import it.prova.manytomanyphoneapp.model.Smartphone;
-import it.prova.manytomanyphoneapp.model.App;
 
 public interface SmartphoneService {
 
@@ -19,7 +19,17 @@ public interface SmartphoneService {
 	public void rimuovi(Long idSmartphone) throws Exception;
 
 	public void scollegaERimuoviSmartphone(Long idSmartphone) throws Exception;
+
+	void aggionaSmartphone(Long idSmartphone, String versioneOS) throws Exception;
+
+	void installaAppSuSmartphone(Long idSmartphone, Long idApp) throws Exception;
+
+	public void disinstallaAppDaSmartphone(Long idSmartphone, Long idApp) throws Exception;
+
 	// per injection
 	public void setSmartphoneDAO(SmartphoneDAO smartphoneDAO);
+	public void setAppDAO(AppDAO appDAO);
+
+
 
 }

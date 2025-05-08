@@ -12,7 +12,7 @@ public class MyServiceFactory {
 			smartphoneServiceInstance = new SmartphoneServiceImpl();
 
 		smartphoneServiceInstance.setSmartphoneDAO(MyDaoFactory.getSmartphoneDAOInstance());
-//		appServiceInstance.setAppDAO(MyDaoFactory.getAppDAOInstance());
+		smartphoneServiceInstance.setAppDAO(MyDaoFactory.getAppDAOInstance());
 
 		return smartphoneServiceInstance;
 	}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fbbd4fae-e5f6-4054-985a-114453da9621" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/dao/DbMock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/dao/SlotcatenadimontaggioDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/dao/SlotcatenadimontaggioDAOImplMock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/dao/StudenteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/dao/StudenteDAOImplMock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/service/AutomobileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/service/AutomobileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/service/CarrozzeriaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/service/CarrozzeriaServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/service/ImpiantoElettricoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/service/MotoreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/service/ProvaSuStradaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/service/ProvaSuStradaServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/service/TelaioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../catenadimontaggio/src/main/java/com/example/catenadimontaggio/service/TelaioServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/dao/EntityManagerUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/dao/IBaseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/dao/MyDaoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/dao/articolo/ArticoloDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/dao/articolo/ArticoloDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/dao/categoria/CategoriaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/dao/categoria/CategoriaDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/dao/ordine/OrdineDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/dao/ordine/OrdineDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/model/Articolo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/model/Categoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/model/Ordine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/service/ArticoloService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/service/ArticoloServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/service/CategoriaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/service/CategoriaServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/service/MyServiceFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/service/OrdineService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/service/OrdineServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/java/it/prova/gestionearticoli/test/MyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gestioneordiniarticolicategorie/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../postadestinatario/src/main/java/it/prova/model/Destinatario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../postadestinatario/src/main/java/it/prova/model/PostaDiPaese.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../postadestinatario/src/main/java/it/prova/test/MockData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../postadestinatario/src/main/java/it/prova/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../manytomanyphoneapp/src/main/java/it/prova/manytomanyphoneapp/service/MyServiceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../manytomanyphoneapp/src/main/java/it/prova/manytomanyphoneapp/service/MyServiceFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../manytomanyphoneapp/src/main/java/it/prova/manytomanyphoneapp/test/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../manytomanyphoneapp/src/main/java/it/prova/manytomanyphoneapp/test/MyTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Clash8&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Clash8/java_workspace.git&quot;,
+    &quot;accountId&quot;: &quot;feca3972-c617-417a-8c90-877e258b5b63&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2wnpraJJoKKUeBWsN65BfyYeGeE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.questionario [clean].executor": "Run",
+    "Maven.questionario [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.QuestionarioApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Peppe/Desktop/JAVA Cours/valutadivisoreperfetto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fbbd4fae-e5f6-4054-985a-114453da9621" name="Changes" comment="" />
+      <created>1746687391837</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746687391837</updated>
+      <workItem from="1746687393330" duration="470000" />
+      <workItem from="1746687962230" duration="79000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

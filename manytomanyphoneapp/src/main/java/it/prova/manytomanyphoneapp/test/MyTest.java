@@ -71,6 +71,8 @@ public class MyTest {
 
 		Smartphone smartphoneInstance = smartphoneServiceInstance.caricaSingoloElemento(1L);
 		smartphoneServiceInstance.aggionaSmartphone(smartphoneInstance.getId(), "versioneOS2");
+		smartphoneInstance = smartphoneServiceInstance.caricaSingoloElemento(1L);
+
 		if (!smartphoneInstance.getVersioneOS().equals("versioneOS2"))
 			throw new RuntimeException("testAggionamentoSmartphone fallito ");
 
@@ -107,7 +109,8 @@ public class MyTest {
 		Smartphone smartphoneInstance = smartphoneServiceInstance.caricaSingoloElemento(1L);
 		App appInstance = appServiceInstance.caricaSingoloElemento(1L);
 		smartphoneServiceInstance.installaAppSuSmartphone(smartphoneInstance.getId(), appInstance.getId());
-
+		smartphoneInstance = smartphoneServiceInstance.caricaSingoloElemento(1L);
+		appInstance = appServiceInstance.caricaSingoloElemento(1L);
 		if (!smartphoneInstance.getApp().contains(appInstance))
 			throw new RuntimeException("testInstallazioneAppSuSmartphone fallito ");
 

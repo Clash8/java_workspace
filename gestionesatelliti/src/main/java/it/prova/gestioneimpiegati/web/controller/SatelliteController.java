@@ -64,7 +64,7 @@ public class SatelliteController {
 		if (result.hasErrors())
 			return "satellite/insert";
 
-		String incongruenze = ottieniIncongruenze(satellite);
+		String incongruenze = satellite.ottieniIncongruenze();
 		if (incongruenze != null) {
 			model.addAttribute("errorMessage", incongruenze);
 			return "satellite/insert";
@@ -93,7 +93,7 @@ public class SatelliteController {
 		if (result.hasErrors())
 			return "satellite/edit";
 
-		String incongruenze = ottieniIncongruenze(satellite);
+		String incongruenze = satellite.ottieniIncongruenze();
 		if (incongruenze != null) {
 			model.addAttribute("errorMessage", incongruenze);
 			return "satellite/edit"; // stays on same page, so you can show the message
@@ -126,14 +126,14 @@ public class SatelliteController {
 
 
 	@GetMapping("/list_lanciati_da_piu_di_due_anni")
-	public String listLanciatiDaPiuDiDueAnni(Satellite example, ModelMap model) {
+	public String listLanciatiDaPiuDiDueAnni(ModelMap model) {
 		List<Satellite> results = satelliteService.findLanciatiDaPiuDiDueAnni();
 		model.addAttribute("satellite_list_attribute", results);
 		model.addAttribute("listName", "Lanciati da più di due anni (fornisce una lista di satelliti lanciati da più di due anni che non sono disattivati)");
 		return "satellite/list";
 	}
 	@GetMapping("/list_disattivati_ma_non_rientrati")
-	public String listDisattivatiMaNonRientrati(Satellite example, ModelMap model) {
+	public String listDisattivatiMaNonRientrati(ModelMap model) {
 		List<Satellite> results = satelliteService.findDisattivatiMaNonRientrati();
 		model.addAttribute("satellite_list_attribute", results);
 		model.addAttribute("listName", "Disattivati ma non rientrati (che sono stati disattivati ma con data rientro ancora a null)");
@@ -141,33 +141,11 @@ public class SatelliteController {
 	}
 
 	@GetMapping("/list_fissi_ora_in_orbita_10_anni")
-	public String listFissiOraInOrbita10Anni(Satellite example, ModelMap model) {
+	public String listFissiOraInOrbita10Anni(ModelMap model) {
 		List<Satellite> results = satelliteService.findFissiOraInOrbita10Anni();
 		model.addAttribute("satellite_list_attribute", results);
 		model.addAttribute("listName", "Rimasti in orbita 10 anni ma che ora sono fissi");
 		return "satellite/list";
 	}
 
-
-
-	private static String ottieniIncongruenze(Satellite satellite) {
-		if (satellite.getDataRientro() != null)
-			if (satellite.getDataRientro().isBefore(satellite.getDataLancio()))
-				return "La data di rientro non può essere prima della data di lancio";
-		if (satellite.getStato() != null) {
-			if (satellite.getDataLancio() == null)
-				return "La data di lancio deve essere inserita se si sta inserendo uno stato";
-			if (satellite.getDataLancio().isAfter(java.time.LocalDate.now()))
-				return "La data di lancio non può essere successiva alla data odierna se si sta inserendo uno stato";
-			if ((satellite.getStato().equals(StatoSatellite.IN_MOVIMENTO) || satellite.getStato().equals(StatoSatellite.FISSO)) && satellite.getDataRientro() != null && satellite.getDataRientro().isBefore(java.time.LocalDate.now()))
-				return "La data di rientro non puo essere antecedente alla data odierna se si sta inserendo uno stato IN_MOVIMENTO o FISSO";
-			if (satellite.getStato().equals(StatoSatellite.DISATTIVATO)) {
-				if (satellite.getDataRientro() == null)
-					return "La data di rientro deve essere inserita se si sta inserendo uno stato DISATTIVATO";
-				if (satellite.getDataRientro().isAfter(java.time.LocalDate.now()))
-					return "La data di rientro non può essere successiva alla data odierna se si sta inserendo uno stato DISATTIVATO";
-			}
-		}
-		return null;
-	}
 }

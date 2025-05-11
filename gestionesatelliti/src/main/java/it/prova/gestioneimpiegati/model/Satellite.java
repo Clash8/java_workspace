@@ -104,4 +104,27 @@ public class Satellite {
 				", stato=" + stato +
 				'}';
 	}
+
+
+
+	public String ottieniIncongruenze() {
+		if (getDataRientro() != null)
+			if (getDataRientro().isBefore(getDataLancio()))
+				return "La data di rientro non può essere prima della data di lancio";
+		if (getStato() != null) {
+			if (getDataLancio() == null)
+				return "La data di lancio deve essere inserita se si sta inserendo uno stato";
+			if (getDataLancio().isAfter(java.time.LocalDate.now()))
+				return "La data di lancio non può essere successiva alla data odierna se si sta inserendo uno stato";
+			if ((getStato().equals(StatoSatellite.IN_MOVIMENTO) || getStato().equals(StatoSatellite.FISSO)) && getDataRientro() != null && getDataRientro().isBefore(java.time.LocalDate.now()))
+				return "La data di rientro non puo essere antecedente alla data odierna se si sta inserendo uno stato IN_MOVIMENTO o FISSO";
+			if (getStato().equals(StatoSatellite.DISATTIVATO)) {
+				if (getDataRientro() == null)
+					return "La data di rientro deve essere inserita se si sta inserendo uno stato DISATTIVATO";
+				if (getDataRientro().isAfter(java.time.LocalDate.now()))
+					return "La data di rientro non può essere successiva alla data odierna se si sta inserendo uno stato DISATTIVATO";
+			}
+		}
+		return null;
+	}
 }

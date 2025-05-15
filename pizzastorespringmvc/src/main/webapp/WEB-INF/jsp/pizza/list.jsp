@@ -41,35 +41,33 @@
 				        <h5>Lista dei risultati</h5> 
 				    </div>
 				    <div class='card-body'>
-				    	<a class="btn btn-primary " href="${pageContext.request.contextPath}/regista/insert">Add New</a>
-				    	<a href="${pageContext.request.contextPath }/regista/search" class='btn btn-outline-secondary' >
+				    	<a class="btn btn-primary " href="${pageContext.request.contextPath}/pizza/insert">Add New</a>
+				    	<a href="${pageContext.request.contextPath }/pizza/search" class='btn btn-outline-secondary' >
 				            <i class='fa fa-chevron-left'></i> Torna alla Ricerca
 				        </a>
 				    
 				        <div class='table-responsive'>
-				            <table class='table table-striped ' >
+				            <table class='table table-striped'>
 				                <thead>
 				                    <tr>
-			                         	<th>Nome</th>
-				                        <th>Cognome</th>
-				                        <th>NickName</th>
-				                        <th>Data di Nascita</th>
-				                        <th>Sesso</th>
+			                         	<th>Descrizione</th>
+				                        <th>Ingredienti</th>
+				                        <th>Prezzo Base</th>
+				                        <th>Attivo</th>
 				                        <th>Azioni</th>
 				                    </tr>
 				                </thead>
 				                <tbody>
-				                	<c:forEach items="${registi_list_attribute }" var="registaItem">
+				                	<c:forEach items="${pizze_list_attribute}" var="pizzaItem">
 										<tr>
-											<td>${registaItem.nome }</td>
-											<td>${registaItem.cognome }</td>
-											<td>${registaItem.nickName }</td>
-											<td><fmt:formatDate type = "date" value = "${registaItem.dataDiNascita }" /></td>
-											<td>${registaItem.sesso.abbreviazione }</td>
+											<td>${pizzaItem.descrizione}</td>
+											<td>${pizzaItem.ingredienti}</td>
+											<td>${pizzaItem.prezzoBase}</td>
+											<td>${pizzaItem.attivo}</td>
 											<td>
-												<a class="btn  btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/regista/show/${registaItem.id }">Visualizza</a>
-												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="${pageContext.request.contextPath}/regista/edit/${registaItem.id }">Edit</a>
-												<a class="btn btn-outline-danger btn-sm" href="${pageContext.request.contextPath}/regista/remove/${registaItem.id }">Delete</a>
+												<a class="btn  btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/pizza/show/${pizzaItem.id}">Visualizza</a>
+												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="${pageContext.request.contextPath}/pizza/edit/${pizzaItem.id}">Edit</a>
+												<a class="btn btn-outline-danger btn-sm" href="${pageContext.request.contextPath}/pizza/remove/${pizzaItem.id}">Delete</a>
 											</td>
 										</tr>
 									</c:forEach>

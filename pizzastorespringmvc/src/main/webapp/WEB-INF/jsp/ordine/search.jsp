@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="it" class="h-100" >
 	 <head>
@@ -29,43 +30,34 @@
 				    <div class='card-body'>
 		
 		
-							<form method="post" action="${pageContext.request.contextPath}/regista/list" class="row g-3" >
+							<form method="post" action="${pageContext.request.contextPath}/ordine/list" class="row g-3" >
 							
 							
 								<div class="col-md-6">
-									<label for="nome" class="form-label">Nome</label>
-									<input type="text" name="nome" id="nome" class="form-control" placeholder="Inserire il nome"  >
+									<label for="codice" class="form-label">Codice</label>
+									<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  >
 								</div>
-								
+
 								<div class="col-md-6">
-									<label for="cognome" class="form-label">Cognome</label>
-									<input type="text" name="cognome" id="cognome" class="form-control" placeholder="Inserire il cognome"  >
+									<label for="dataOrdine" class="form-label">Data Ordine</label>
+                        			<input class="form-control" id="dataOrdine" type="date" placeholder="dd/MM/yy"
+                            			title="formato : gg/mm/aaaa"  name="dataOrdine">
 								</div>
-							
+
 								<div class="col-md-6">
-									<label for="nickName" class="form-label">Nickname</label>
-									<input type="text" class="form-control" name="nickName" id="nickName" placeholder="Inserire il nickname"  >
-								</div>
-								
-								<div class="col-md-3">
-									<label for="dataDiNascita" class="form-label">Data di Nascita</label>
-                        			<input class="form-control" id="dataDiNascita" type="date" placeholder="dd/MM/yy"
-                            			title="formato : gg/mm/aaaa"  name="dataDiNascita"   >
-								</div>
-								
-								<div class="col-md-3">
-									<label for="sesso" class="form-label">Sesso</label>
-								    <select class="form-select" id="sesso" name="sesso" >
-								    	<option value="" selected> - Selezionare - </option>
-								      	<option value="MASCHIO" >M</option>
-								      	<option value="FEMMINA"  >F</option>
-								    </select>
+									<label for="cliente.id" class="form-label">Cliente</label>
+									<select class="form-select" id="cliente.id" name="cliente.id">
+										<option value=""> -- Selezionare una voce -- </option>
+										<c:forEach items="${clienti_list_attribute}" var="clienteItem">
+											<option value="${clienteItem.id}">${clienteItem.nome} ${clienteItem.cognome}</option>
+										</c:forEach>
+									</select>
 								</div>
 								
 								
 							<div class="col-12">
 								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary">Conferma</button>
-								<a class="btn btn-outline-primary ml-2" href="${pageContext.request.contextPath}/regista/insert">Add New</a>
+								<a class="btn btn-outline-primary ml-2" href="${pageContext.request.contextPath}/ordine/insert">Add New</a>
 								<input class="btn btn-outline-warning" type="reset" value="Ripulisci">
 							</div>
 		

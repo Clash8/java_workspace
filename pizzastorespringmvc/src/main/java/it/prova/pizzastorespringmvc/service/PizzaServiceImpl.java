@@ -46,5 +46,10 @@ public class PizzaServiceImpl implements PizzaService {
 //		return null;
 	}
 
+	@Transactional(readOnly = true)
+	public List<Pizza> cercaByEverything(String term) {
+		return repository.findByDescrizioneContainingIgnoreCaseOrIngredientiContainingIgnoreCaseOrderByDescrizioneAsc(term, term);
+	}
+
 
 }

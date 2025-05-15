@@ -9,6 +9,8 @@ public interface ClienteService {
 
 	Cliente caricaSingoloElemento(Long id);
 
+	Cliente caricaSingoloElementoConOrdini(Long id);
+
 	void aggiorna(Cliente clienteInstance);
 
 	void inserisciNuovo(Cliente clienteInstance);

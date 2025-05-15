@@ -9,6 +9,8 @@ public interface OrdineService {
 
 	Ordine caricaSingoloElemento(Long id);
 
+	Ordine caricaSingoloElementoEager(Long id);
+
 	void aggiorna(Ordine ordineInstance);
 
 	void inserisciNuovo(Ordine ordineInstance);

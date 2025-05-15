@@ -25,19 +25,19 @@ public class CustomPizzaRepositoryImpl implements CustomPizzaRepository {
 		StringBuilder queryBuilder = new StringBuilder("select p from Pizza p where p.id = p.id ");
 		// id, descrizione, ingredienti, prezzo base [che è un prezzo fisso della pizza dato dal costo della farina, luce, costi vari], attivo=true/false),
 		if (StringUtils.isNotEmpty(example.getDescrizione())) {
-			whereClauses.add(" c.descrizione like :descrizione ");
+			whereClauses.add(" p.descrizione like :descrizione ");
 			paramaterMap.put("descrizione", "%" + example.getDescrizione() + "%");
 		}
 		if (StringUtils.isNotEmpty(example.getIngredienti())) {
-			whereClauses.add(" c.ingredienti like :ingredienti ");
+			whereClauses.add(" p.ingredienti like :ingredienti ");
 			paramaterMap.put("ingredienti", "%" + example.getIngredienti() + "%");
 		}
 		if (example.getPrezzoBase() != null) {
-			whereClauses.add(" c.prezzoBase = :prezzoBase ");
+			whereClauses.add(" p.prezzoBase = :prezzoBase ");
 			paramaterMap.put("prezzoBase", example.getPrezzoBase());
 		}
 		if (example.getAttivo() != null) {
-			whereClauses.add(" c.attivo = :attivo ");
+			whereClauses.add(" p.attivo = :attivo ");
 			paramaterMap.put("attivo", example.getAttivo());
         }
 

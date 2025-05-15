@@ -17,4 +17,6 @@ public interface PizzaService {
 
 	List<Pizza> findByExample(Pizza example);
 
+	List<Pizza> cercaByEverything(String term);
+
 }

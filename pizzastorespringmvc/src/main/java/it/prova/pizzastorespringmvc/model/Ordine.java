@@ -2,10 +2,7 @@ package it.prova.pizzastorespringmvc.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "ordine")
@@ -18,7 +15,8 @@ public class Ordine {
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "cliente_id", nullable = false)
+	@JoinColumn(name = "cliente_id")
+//	@JoinColumn(name = "cliente_id", nullable = false)
 	private Cliente cliente;
 
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -26,7 +24,7 @@ public class Ordine {
 	private List<Pizza> pizze = new ArrayList<>(0);
 
 	@Column(name = "dataordine")
-	private LocalDate dataOrdine;
+	private Date dataOrdine;
 
 	@Column(name = "chiuso")
 	private Boolean chiuso;
@@ -36,7 +34,16 @@ public class Ordine {
 
 	public Ordine() {}
 
-	public Ordine(Cliente cliente, List<Pizza> pizze, LocalDate dataOrdine, Boolean chiuso, String codice) {
+	public Ordine(Long id, Cliente cliente, List<Pizza> pizze, Date dataOrdine, Boolean chiuso, String codice) {
+		this.id = id;
+		this.cliente = cliente;
+		this.pizze = pizze;
+		this.dataOrdine = dataOrdine;
+		this.chiuso = chiuso;
+		this.codice = codice;
+	}
+
+	public Ordine(Cliente cliente, List<Pizza> pizze, Date dataOrdine, Boolean chiuso, String codice) {
 		this.cliente = cliente;
 		this.pizze = pizze;
 		this.dataOrdine = dataOrdine;
@@ -68,11 +75,11 @@ public class Ordine {
 		this.pizze = pizze;
 	}
 
-	public LocalDate getDataOrdine() {
+	public Date getDataOrdine() {
 		return dataOrdine;
 	}
 
-	public void setDataOrdine(LocalDate dataOrdine) {
+	public void setDataOrdine(Date dataOrdine) {
 		this.dataOrdine = dataOrdine;
 	}
 

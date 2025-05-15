@@ -25,8 +25,8 @@ public class CustomOrdineRepositoryImpl implements CustomOrdineRepository {
 		StringBuilder queryBuilder = new StringBuilder("select o from Ordine o where o.id = o.id ");
 		//(id, Cliente, lista di Pizza, dataOrdine, CLOSED=true/false, codice, costo totale ordine).
 		if (example.getCliente() != null && example.getCliente().getId() != null) {
-			whereClauses.add(" o.cliente_id = :cliente_id ");
-			paramaterMap.put("cliente_id", example.getCliente().getId());
+			whereClauses.add(" o.cliente.id = :clienteId ");
+			paramaterMap.put("clienteId", example.getCliente().getId());
 		}
 		if (example.getDataOrdine() != null) {
 			whereClauses.add(" o.dataOrdine = :dataOrdine ");

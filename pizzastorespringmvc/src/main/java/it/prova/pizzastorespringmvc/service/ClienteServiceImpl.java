@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ClienteServiceImpl implements ClienteService {
@@ -22,6 +23,11 @@ public class ClienteServiceImpl implements ClienteService {
 	@Transactional(readOnly = true)
 	public Cliente caricaSingoloElemento(Long id) {
 		return repository.findById(id).orElse(null);
+	}
+
+	@Transactional(readOnly = true)
+	public Cliente caricaSingoloElementoConOrdini(Long id) {
+		return repository.findByIdWithOrdini(id).orElse(null);
 	}
 
 	@Transactional

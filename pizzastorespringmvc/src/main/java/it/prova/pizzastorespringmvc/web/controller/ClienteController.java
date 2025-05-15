@@ -1,10 +1,8 @@
 package it.prova.pizzastorespringmvc.web.controller;
 
 import it.prova.pizzastorespringmvc.dto.ClienteDTO;
-import it.prova.pizzastorespringmvc.dto.RegistaDTO;
 import it.prova.pizzastorespringmvc.model.Cliente;
 import it.prova.pizzastorespringmvc.service.ClienteService;
-import it.prova.pizzastorespringmvc.service.RegistaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,14 +23,11 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
 
-	@Autowired
-	private RegistaService registaService;
-
 	@GetMapping
 	public ModelAndView listAllClienti() {
 		ModelAndView mv = new ModelAndView();
-		List<Cliente> clientes = clienteService.listAllElements();
-		mv.addObject("cliente_list_attribute", ClienteDTO.createClienteDTOListFromModelList(clientes, false));
+		List<Cliente> clienti = clienteService.listAllElements();
+		mv.addObject("clienti_list_attribute", ClienteDTO.createClienteDTOListFromModelList(clienti, false));
 		mv.setViewName("cliente/list");
 		return mv;
 	}
@@ -49,16 +44,6 @@ public class ClienteController {
 	public String saveCliente(@Valid @ModelAttribute("insert_cliente_attr") ClienteDTO clienteDTO, BindingResult result,
 			RedirectAttributes redirectAttrs, HttpServletRequest request) {
 
-		// se fosse un entity questa operazione sarebbe inutile perche provvederebbe
-		// da solo fare il binding dell'intero oggetto. Essendo un dto dobbiamo pensarci
-		// noi 'a mano'. Se validazione risulta ok devo caricare l'oggetto per
-		// visualizzarne nome e cognome nel campo testo
-		if (clienteDTO.getRegista() == null || clienteDTO.getRegista().getId() == null)
-			result.rejectValue("regista", "cliente.regista.notnull");
-		else
-			clienteDTO.setRegista(RegistaDTO
-					.buildRegistaDTOFromModel(registaService.caricaSingoloElemento(clienteDTO.getRegista().getId())));
-
 		if (result.hasErrors()) {
 			return "cliente/insert";
 		}
@@ -69,30 +54,28 @@ public class ClienteController {
 	}
 
 	@GetMapping("/search")
-	public String searchCliente(Model model) {
-		model.addAttribute("registi_list_attribute",
-				RegistaDTO.createRegistaDTOListFromModelList(registaService.listAllElements()));
+	public String searchCliente() {
 		return "cliente/search";
 	}
 
 	@PostMapping("/list")
 	public String listClientes(ClienteDTO clienteExample, ModelMap model) {
-		List<Cliente> clientes = clienteService.findByExample(clienteExample.buildClienteModel());
-		model.addAttribute("cliente_list_attribute", ClienteDTO.createClienteDTOListFromModelList(clientes, false));
+		List<Cliente> clienti = clienteService.findByExample(clienteExample.buildClienteModel());
+		model.addAttribute("clienti_list_attribute", ClienteDTO.createClienteDTOListFromModelList(clienti, false));
 		return "cliente/list";
 	}
 
 	@GetMapping("/show/{idCliente}")
 	public String showCliente(@PathVariable(required = true) Long idCliente, Model model) {
 		model.addAttribute("show_cliente_attr",
-				ClienteDTO.buildClienteDTOFromModel(clienteService.caricaSingoloElementoEager(idCliente), true));
+				ClienteDTO.buildClienteDTOFromModel(clienteService.caricaSingoloElementoConOrdini(idCliente), true));
 		return "cliente/show";
 	}
 
 	@GetMapping("/edit/{idCliente}")
 	public String editCliente(@PathVariable(required = true) Long idCliente, Model model) {
 		model.addAttribute("edit_cliente_attr",
-				ClienteDTO.buildClienteDTOFromModel(clienteService.caricaSingoloElemento(idCliente), true));
+				ClienteDTO.buildClienteDTOFromModel(clienteService.caricaSingoloElemento(idCliente), false));
 		return "cliente/edit";
 	}
 

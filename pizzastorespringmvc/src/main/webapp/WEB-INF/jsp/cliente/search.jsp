@@ -29,43 +29,43 @@
 				    <div class='card-body'>
 		
 		
-							<form method="post" action="${pageContext.request.contextPath}/regista/list" class="row g-3" >
-							
+							<form method="post" action="${pageContext.request.contextPath}/cliente/list" class="row g-3" >
+
 							
 								<div class="col-md-6">
 									<label for="nome" class="form-label">Nome</label>
-									<input type="text" name="nome" id="nome" class="form-control" placeholder="Inserire il nome"  >
+									<input type="text" name="nome" id="nome" class="form-control" placeholder="Inserire il nome" >
 								</div>
 								
 								<div class="col-md-6">
 									<label for="cognome" class="form-label">Cognome</label>
-									<input type="text" name="cognome" id="cognome" class="form-control" placeholder="Inserire il cognome"  >
+									<input type="text" name="cognome" id="cognome" class="form-control" placeholder="Inserire il cognome" >
 								</div>
 							
 								<div class="col-md-6">
-									<label for="nickName" class="form-label">Nickname</label>
-									<input type="text" class="form-control" name="nickName" id="nickName" placeholder="Inserire il nickname"  >
+									<label for="indirizzo" class="form-label">Indirizzo</label>
+									<input type="text" class="form-control" name="indirizzo" id="indirizzo" placeholder="Inserire l'indirizzo"  >
 								</div>
 								
 								<div class="col-md-3">
 									<label for="dataDiNascita" class="form-label">Data di Nascita</label>
                         			<input class="form-control" id="dataDiNascita" type="date" placeholder="dd/MM/yy"
-                            			title="formato : gg/mm/aaaa"  name="dataDiNascita"   >
+                            			title="formato : gg/mm/aaaa"  name="dataDiNascita">
 								</div>
 								
 								<div class="col-md-3">
-									<label for="sesso" class="form-label">Sesso</label>
-								    <select class="form-select" id="sesso" name="sesso" >
+									<label for="attivo" class="form-label">Attivo</label>
+								    <select class="form-select" id="attivo" name="attivo">
 								    	<option value="" selected> - Selezionare - </option>
-								      	<option value="MASCHIO" >M</option>
-								      	<option value="FEMMINA"  >F</option>
+								      	<option value="true">Vero</option>
+								      	<option value="false">Falso</option>
 								    </select>
 								</div>
 								
 								
 							<div class="col-12">
 								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary">Conferma</button>
-								<a class="btn btn-outline-primary ml-2" href="${pageContext.request.contextPath}/regista/insert">Add New</a>
+								<a class="btn btn-outline-primary ml-2" href="${pageContext.request.contextPath}/cliente/insert">Add New</a>
 								<input class="btn btn-outline-warning" type="reset" value="Ripulisci">
 							</div>
 		

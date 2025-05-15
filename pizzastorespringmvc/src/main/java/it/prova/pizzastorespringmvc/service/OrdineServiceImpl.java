@@ -24,6 +24,11 @@ public class OrdineServiceImpl implements OrdineService {
 		return repository.findById(id).orElse(null);
 	}
 
+	@Transactional(readOnly = true)
+	public Ordine caricaSingoloElementoEager(Long id) {
+		return repository.findSingleOrdineEager(id);
+	}
+
 	@Transactional
 	public void aggiorna(Ordine ordineInstance) {
 		repository.save(ordineInstance);

@@ -29,43 +29,38 @@
 				    <div class='card-body'>
 		
 		
-							<form method="post" action="${pageContext.request.contextPath}/regista/list" class="row g-3" >
-							
-							
+							<form method="post" action="${pageContext.request.contextPath}/pizza/list" class="row g-3" >
+
+<%--								//id, descrizione, ingredienti, prezzo base [che è un prezzo fisso della pizza dato dal costo della farina, luce, costi vari], attivo=true/false),--%>
+
 								<div class="col-md-6">
-									<label for="nome" class="form-label">Nome</label>
-									<input type="text" name="nome" id="nome" class="form-control" placeholder="Inserire il nome"  >
+									<label for="descrizione" class="form-label">Descrizione</label>
+									<input type="text" name="descrizione" id="descrizione" class="form-control" placeholder="Inserire il descrizione">
 								</div>
 								
 								<div class="col-md-6">
-									<label for="cognome" class="form-label">Cognome</label>
-									<input type="text" name="cognome" id="cognome" class="form-control" placeholder="Inserire il cognome"  >
+									<label for="ingredienti" class="form-label">Ingredienti</label>
+									<input type="text" name="ingredienti" id="ingredienti" class="form-control" placeholder="Inserire gli ingredienti">
 								</div>
 							
 								<div class="col-md-6">
-									<label for="nickName" class="form-label">Nickname</label>
-									<input type="text" class="form-control" name="nickName" id="nickName" placeholder="Inserire il nickname"  >
+									<label for="prezzoBase" class="form-label">Prezzo Base</label>
+									<input type="number" step="0.5" class="form-control" name="prezzoBase" id="prezzoBase" placeholder="Inserire il prezzo base">
 								</div>
-								
-								<div class="col-md-3">
-									<label for="dataDiNascita" class="form-label">Data di Nascita</label>
-                        			<input class="form-control" id="dataDiNascita" type="date" placeholder="dd/MM/yy"
-                            			title="formato : gg/mm/aaaa"  name="dataDiNascita"   >
-								</div>
-								
-								<div class="col-md-3">
-									<label for="sesso" class="form-label">Sesso</label>
-								    <select class="form-select" id="sesso" name="sesso" >
-								    	<option value="" selected> - Selezionare - </option>
-								      	<option value="MASCHIO" >M</option>
-								      	<option value="FEMMINA"  >F</option>
-								    </select>
+
+								<div class="col-md-6">
+									<label for="attivo" class="form-label">Attivo</label>
+									<select class="form-select" id="attivo" name="attivo">
+										<option value="" selected> - Selezionare - </option>
+										<option value="true">Vero</option>
+										<option value="false">Falso</option>
+									</select>
 								</div>
 								
 								
 							<div class="col-12">
 								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary">Conferma</button>
-								<a class="btn btn-outline-primary ml-2" href="${pageContext.request.contextPath}/regista/insert">Add New</a>
+								<a class="btn btn-outline-primary ml-2" href="${pageContext.request.contextPath}/pizza/insert">Add New</a>
 								<input class="btn btn-outline-warning" type="reset" value="Ripulisci">
 							</div>
 		

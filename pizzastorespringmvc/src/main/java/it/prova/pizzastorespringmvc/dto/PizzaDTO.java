@@ -1,6 +1,5 @@
 package it.prova.pizzastorespringmvc.dto;
 
-import it.prova.pizzastorespringmvc.model.Film;
 import it.prova.pizzastorespringmvc.model.Pizza;
 
 import java.util.List;
@@ -15,7 +14,7 @@ public class PizzaDTO {
 
 	private String ingredienti;
 
-	private Double prezzoBase;
+	private Double prezzoBase = 0.0;
 
 	private Boolean attivo;
 

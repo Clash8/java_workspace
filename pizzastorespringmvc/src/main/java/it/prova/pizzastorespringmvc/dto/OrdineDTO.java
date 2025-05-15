@@ -1,13 +1,10 @@
 package it.prova.pizzastorespringmvc.dto;
 
-import it.prova.pizzastorespringmvc.model.Film;
 import it.prova.pizzastorespringmvc.model.Ordine;
 
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class OrdineDTO {
@@ -19,15 +16,16 @@ public class OrdineDTO {
 
 	private List<PizzaDTO> pizze = new ArrayList<>(0);
 
-	private LocalDate dataOrdine;
+	private Date dataOrdine;
 
 	private Boolean chiuso;
 
+	@NotBlank(message = "{notblank}")
 	private String codice;
 
 	public OrdineDTO() {}
 
-	public OrdineDTO(Long id, ClienteDTO cliente, LocalDate dataOrdine, Boolean chiuso, String codice) {
+	public OrdineDTO(Long id, ClienteDTO cliente, Date dataOrdine, Boolean chiuso, String codice) {
 		this.id = id;
 		this.cliente = cliente;
 		this.dataOrdine = dataOrdine;
@@ -35,7 +33,7 @@ public class OrdineDTO {
 		this.codice = codice;
 	}
 
-	public OrdineDTO(Long id, ClienteDTO cliente, List<PizzaDTO> pizze, LocalDate dataOrdine, Boolean chiuso, String codice) {
+	public OrdineDTO(Long id, ClienteDTO cliente, List<PizzaDTO> pizze, Date dataOrdine, Boolean chiuso, String codice) {
 		this.id = id;
 		this.cliente = cliente;
 		this.pizze = pizze;
@@ -68,11 +66,11 @@ public class OrdineDTO {
 		this.pizze = pizze;
 	}
 
-	public LocalDate getDataOrdine() {
+	public Date getDataOrdine() {
 		return dataOrdine;
 	}
 
-	public void setDataOrdine(LocalDate dataOrdine) {
+	public void setDataOrdine(Date dataOrdine) {
 		this.dataOrdine = dataOrdine;
 	}
 
@@ -111,6 +109,10 @@ public class OrdineDTO {
 				", chiuso=" + chiuso +
 				", codice='" + codice + '\'' +
 				'}';
+	}
+
+	public Ordine buildOrdineModel() {
+		return new Ordine(this.id, this.cliente.buildClienteModel(), this.pizze.stream().map(PizzaDTO::buildPizzaModel).collect(Collectors.toList()), this.dataOrdine, this.chiuso, this.codice);
 	}
 
 	public static OrdineDTO buildOrdineDTOFromModel(Ordine ordineModel, boolean includePizze) {

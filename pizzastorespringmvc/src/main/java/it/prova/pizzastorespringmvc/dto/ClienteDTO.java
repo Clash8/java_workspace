@@ -1,9 +1,7 @@
 package it.prova.pizzastorespringmvc.dto;
 
 import it.prova.pizzastorespringmvc.model.Cliente;
-import it.prova.pizzastorespringmvc.model.Film;
 import it.prova.pizzastorespringmvc.model.Ordine;
-import it.prova.pizzastorespringmvc.model.Regista;
 
 import javax.validation.constraints.NotBlank;
 import java.util.Date;

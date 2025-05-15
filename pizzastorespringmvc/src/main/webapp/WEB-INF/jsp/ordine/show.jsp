@@ -23,40 +23,58 @@
 			    <div class='card-body'>
 			    	<dl class="row">
 					  <dt class="col-sm-3 text-right">Id:</dt>
-					  <dd class="col-sm-9">${show_regista_attr.id}</dd>
+					  <dd class="col-sm-9">${show_ordine_attr.id}</dd>
 			    	</dl>
 			    	
 			    	<dl class="row">
-					  <dt class="col-sm-3 text-right">Nome:</dt>
-					  <dd class="col-sm-9">${show_regista_attr.nome}</dd>
-			    	</dl>
-			    	
-			    	<dl class="row">
-					  <dt class="col-sm-3 text-right">Cognome:</dt>
-					  <dd class="col-sm-9">${show_regista_attr.cognome}</dd>
+					  <dt class="col-sm-3 text-right">Codice:</dt>
+					  <dd class="col-sm-9">${show_ordine_attr.codice}</dd>
 			    	</dl>
 
 			    	<dl class="row">
-					  <dt class="col-sm-3 text-right">Nickname:</dt>
-					  <dd class="col-sm-9">${show_regista_attr.nickName}</dd>
+					  <dt class="col-sm-3 text-right">Data Ordine:</dt>
+					  <dd class="col-sm-9"><fmt:formatDate type = "date" value = "${show_ordine_attr.dataOrdine}" /></dd>
 			    	</dl>
-			    	
-			    	<dl class="row">
-					  <dt class="col-sm-3 text-right">Data Di Nascita:</dt>
-					  <dd class="col-sm-9"><fmt:formatDate type = "date" value = "${show_regista_attr.dataDiNascita}" /></dd>
-			    	</dl>
-			    	
-			    	<dl class="row">
-					  <dt class="col-sm-3 text-right">Sesso:</dt>
-					  <dd class="col-sm-9">${show_regista_attr.sesso}</dd>
-			    	</dl>
+					
+					<h4 class="text-center">CLIENTE</h4>
+
+					<dl class="row">
+						<dt class="col-sm-3 text-right">Id:</dt>
+						<dd class="col-sm-9">${show_ordine_attr.cliente.id}</dd>
+					</dl>
+
+					<dl class="row">
+						<dt class="col-sm-3 text-right">Nome:</dt>
+						<dd class="col-sm-9">${show_ordine_attr.cliente.nome}</dd>
+					</dl>
+
+					<dl class="row">
+						<dt class="col-sm-3 text-right">Cognome:</dt>
+						<dd class="col-sm-9">${show_ordine_attr.cliente.cognome}</dd>
+					</dl>
+
+					<dl class="row">
+						<dt class="col-sm-3 text-right">Indirizzo:</dt>
+						<dd class="col-sm-9">${show_ordine_attr.cliente.indirizzo}</dd>
+					</dl>
+
+					<dl class="row">
+						<dt class="col-sm-3 text-right">Data Di Nascita:</dt>
+						<dd class="col-sm-9"><fmt:formatDate type = "date" value = "${show_ordine_attr.cliente.dataDiNascita}" /></dd>
+					</dl>
+
+					<dl class="row">
+						<dt class="col-sm-3 text-right">Attivo:</dt>
+						<dd class="col-sm-9">${show_ordine_attr.cliente.attivo}</dd>
+					</dl>
+
 
 			    	
 			    <!-- end card body -->
 			    </div>
 			    
 			    <div class='card-footer'>
-			        <a href="${pageContext.request.contextPath }/regista/" class='btn btn-outline-secondary' style='width:80px'>
+			        <a href="${pageContext.request.contextPath }/ordine/" class='btn btn-outline-secondary' style='width:80px'>
 			            <i class='fa fa-chevron-left'></i> Back
 			        </a>
 			    </div>

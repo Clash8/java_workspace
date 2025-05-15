@@ -23,32 +23,27 @@
 			    <div class='card-body'>
 			    	<dl class="row">
 					  <dt class="col-sm-3 text-right">Id:</dt>
-					  <dd class="col-sm-9">${show_regista_attr.id}</dd>
+					  <dd class="col-sm-9">${show_pizza_attr.id}</dd>
 			    	</dl>
 			    	
 			    	<dl class="row">
-					  <dt class="col-sm-3 text-right">Nome:</dt>
-					  <dd class="col-sm-9">${show_regista_attr.nome}</dd>
+					  <dt class="col-sm-3 text-right">Descrizione:</dt>
+					  <dd class="col-sm-9">${show_pizza_attr.descrizione}</dd>
 			    	</dl>
 			    	
 			    	<dl class="row">
-					  <dt class="col-sm-3 text-right">Cognome:</dt>
-					  <dd class="col-sm-9">${show_regista_attr.cognome}</dd>
+					  <dt class="col-sm-3 text-right">Ingredienti:</dt>
+					  <dd class="col-sm-9">${show_pizza_attr.ingredienti}</dd>
 			    	</dl>
 
 			    	<dl class="row">
-					  <dt class="col-sm-3 text-right">Nickname:</dt>
-					  <dd class="col-sm-9">${show_regista_attr.nickName}</dd>
+					  <dt class="col-sm-3 text-right">Prezzo Base:</dt>
+					  <dd class="col-sm-9">${show_pizza_attr.prezzoBase}</dd>
 			    	</dl>
-			    	
+
 			    	<dl class="row">
-					  <dt class="col-sm-3 text-right">Data Di Nascita:</dt>
-					  <dd class="col-sm-9"><fmt:formatDate type = "date" value = "${show_regista_attr.dataDiNascita}" /></dd>
-			    	</dl>
-			    	
-			    	<dl class="row">
-					  <dt class="col-sm-3 text-right">Sesso:</dt>
-					  <dd class="col-sm-9">${show_regista_attr.sesso}</dd>
+					  <dt class="col-sm-3 text-right">Attivo:</dt>
+					  <dd class="col-sm-9">${show_pizza_attr.attivo}</dd>
 			    	</dl>
 
 			    	
@@ -56,7 +51,7 @@
 			    </div>
 			    
 			    <div class='card-footer'>
-			        <a href="${pageContext.request.contextPath }/regista/" class='btn btn-outline-secondary' style='width:80px'>
+			        <a href="${pageContext.request.contextPath }/pizza/" class='btn btn-outline-secondary' style='width:80px'>
 			            <i class='fa fa-chevron-left'></i> Back
 			        </a>
 			    </div>

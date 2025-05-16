@@ -1,0 +1,70 @@
+### Get all films
+GET {{base_url}}/film
+
+### Get film by ID
+GET {{base_url}}/film/3
+
+### Create a new film
+POST {{base_url}}/film
+Content-Type: application/json
+
+{
+  "titolo": "Lo Squalo5",
+  "genere": "thriller",
+  "dataPubblicazione": "1975-12-19",
+  "minutiDurata": 130,
+  "regista": {
+    "id" : 1
+  }
+}
+
+### Update a film
+PUT {{base_url}}/film/3
+Content-Type: application/json
+
+{
+  "titolo": "Lo Squalo7",
+  "genere": "thriller",
+  "dataPubblicazione": "1975-12-19",
+  "minutiDurata": 130,
+  "regista": {
+    "id" : 1
+  }
+}
+
+### Delete a film
+DELETE {{base_url}}/film/3
+
+
+###  search film Native With Pagination
+POST {{base_url}}/film/searchNativeWithPagination?pageNo=0&pageSize=10
+Content-Type: application/json
+
+{
+  "genere": "thriller"
+}
+
+### search regista Native With Pagination
+POST {{base_url}}/regista/searchNativeWithPagination?pageNo=0&pageSize=10&sortBy=id
+Content-Type: application/json
+
+{
+
+}
+
+### search regista Native With Pagination
+POST {{base_url}}/regista/searchWithPagination?pageNo=0&pageSize=10&sortBy=id
+Content-Type: application/json
+
+{
+
+}
+### search regista Native With Pagination
+POST {{base_url}}/film/searchWithPagination?pageNo=0&pageSize=10&sortBy=id
+Content-Type: application/json
+
+{
+  "genere": "thriller"
+}
+
+###

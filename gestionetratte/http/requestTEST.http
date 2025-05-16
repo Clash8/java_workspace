@@ -1,0 +1,20 @@
+@base_url = http://localhost:8080/api
+
+### List all airbus
+GET {{base_url}}/airbus
+
+### List all tratte
+GET {{base_url}}/tratta
+
+### Get airbus by ID
+GET {{base_url}}/airbus/2
+
+### Get tratta by ID
+GET {{base_url}}/tratta/3
+
+### Delete a airbus
+DELETE {{base_url}}/airbus/3
+
+### Delete a tratta
+DELETE {{base_url}}/tratta/3
+

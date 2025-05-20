@@ -1,0 +1,22 @@
+<h1>Lista Tavoli</h1>
+<app-tavolo-filter [tavoloExample]="tavoloExample"></app-tavolo-filter>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>denominazione</th>
+    <th>data creazione</th>
+    <th>creato da</th>
+  </tr>
+  <tr *ngFor="let tavolo of tavoli">
+    <td>{{ tavolo.id }}</td>
+    <td>{{ tavolo.denominazione }}</td>
+    <td>{{ tavolo.dataCreazione | date: 'dd-MM-YY'  }}</td>
+    <td>{{ tavolo.utenteCreazione?.username || 'N/A' }}</td>
+    <td><button (click)="showInfo(tavolo)">INFO</button></td>
+  </tr>
+</table>
+
+<div *ngIf="selectedTavolo">
+  <app-tavolo-info [tavolo]="selectedTavolo"></app-tavolo-info>
+  <button (click)="hideInfo()">indietro</button>
+</div>

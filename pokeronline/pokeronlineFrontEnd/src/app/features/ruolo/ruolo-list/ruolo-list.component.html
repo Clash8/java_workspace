@@ -1,0 +1,13 @@
+<h1>Lista Ruoli</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>descrizione</th>
+    <th>codice</th>
+  </tr>
+  <tr *ngFor="let ruolo of ruoli">
+    <td>{{ ruolo.id }}</td>
+    <td>{{ ruolo.descrizione }}</td>
+    <td>{{ ruolo.codice }}</td>
+  </tr>
+</table>

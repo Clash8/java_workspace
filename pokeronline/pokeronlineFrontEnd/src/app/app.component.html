@@ -1,0 +1,15 @@
+<h1>Benvenuto su pokeronline.com</h1>
+<p>il tuo sito di poker online preferito!</p>
+
+<div>
+  <button (click)="changePage('tavolo-list')">Lista Tavoli</button>
+  <button (click)="changePage('utente-list')">Lista Utenti</button>
+  <button (click)="changePage('ruolo-list')">Lista Ruoli</button>
+</div>
+
+<app-tavolo-list *ngIf="currentPage === 'tavolo-list'"></app-tavolo-list>
+<app-utente-list *ngIf="currentPage === 'utente-list'"></app-utente-list>
+<app-ruolo-list *ngIf="currentPage === 'ruolo-list'"></app-ruolo-list>
+<app-tavolo-filter *ngIf="currentPage === 'tavolo-filter'"></app-tavolo-filter>
+<app-utente-filter *ngIf="currentPage === 'utente-filter'"></app-utente-filter>
+

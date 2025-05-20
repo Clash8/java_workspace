@@ -1,0 +1,22 @@
+<h1>Lista Utenti</h1>
+
+<app-utente-filter [utenteExample]="utenteExample"></app-utente-filter>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>username</th>
+    <th>nome</th>
+    <th>cognome</th>
+  </tr>
+  <tr *ngFor="let utente of filteredUtenti">
+    <td>{{ utente.id }}</td>
+    <td>{{ utente.username }}</td>
+    <td>{{ utente.nome }}</td>
+    <td>{{ utente.cognome }}</td>
+    <td><button (click)="showInfo(utente)">INFO</button></td>
+  </tr>
+</table>
+<div *ngIf="selectedUtente">
+  <app-utente-info [utente]="selectedUtente"></app-utente-info>
+  <button (click)="hideInfo()">indietro</button>
+</div>

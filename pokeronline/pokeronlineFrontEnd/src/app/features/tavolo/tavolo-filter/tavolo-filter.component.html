@@ -1,0 +1,13 @@
+<tr>
+  <td></td>
+  <td>
+    <input placeholder="Denominazione" [(ngModel)]="tavoloExample.denominazione" />
+  </td>
+  <td>
+    <select [(ngModel)]="tavoloExample.utenteCreazione">
+      <option value="">Tutti</option>
+      <option *ngFor="let utente of utenti" [value]="utente.id">{{ utente.username }}</option>
+    </select>
+  </td>
+
+</tr>

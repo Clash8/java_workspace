@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:8080
+
+### Login and get token
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+> {%
+    const body = JSON.parse(response.body);
+    client.global.set("token", body['token-jwt']);
+%}
+
+### get all Tables
+GET {{baseUrl}}/api/tables
+Authorization: Bearer {{token}}

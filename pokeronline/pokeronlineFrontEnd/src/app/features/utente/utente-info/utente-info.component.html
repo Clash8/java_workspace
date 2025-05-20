@@ -1,0 +1,39 @@
+<h2>Stai visualizzando L'utente con username: {{utente.username}}</h2>
+<table>
+    <tr>
+      <th>ID:</th>
+      <td>{{utente.id}}</td>
+    </tr>
+    <tr>
+        <th>username:</th>
+        <td>{{utente.username}}</td>
+    </tr>
+    <tr>
+        <th>nome:</th>
+        <td>{{utente.nome}}</td>
+    </tr>
+    <tr>
+        <th>cognome:</th>
+        <td>{{utente.cognome}}</td>
+    </tr>
+    <tr>
+        <th>data registrazione:</th>
+        <td>{{utente.dataRegistrazione | date: 'dd-MM-YY'}}</td>
+    </tr>
+    <tr>
+        <th>esperienza accumulata:</th>
+        <td>{{utente.esperienzaAccumulata}}</td>
+    </tr>
+    <tr>
+        <th>credito accumulato:</th>
+        <td>{{utente.creditoAccumulato}}</td>
+    </tr>
+    <tr>
+        <th>stato:</th>
+        <td>{{utente.stato}}</td>
+    </tr>
+    <tr>
+        <th>ruolo:</th>
+        <td>{{utente.ruolo.descrizione}}</td>
+    </tr>
+</table>

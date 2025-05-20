@@ -1,0 +1,27 @@
+<h2>Stai visualizzando Il Tavolo {{tavolo.denominazione}}</h2>
+<table>
+  <tr>
+    <th>ID:</th>
+    <td>{{tavolo.id}}</td>
+  </tr>
+  <tr>
+    <th>Denominazione:</th>
+    <td>{{tavolo.denominazione}}</td>
+  </tr>
+  <tr>
+    <th>Cifra Minima:</th>
+    <td>{{tavolo.cifraMinima}}</td>
+  </tr>
+  <tr>
+    <th>Data creazione</th>
+    <td>{{tavolo.dataCreazione | date: 'dd-MM-YY'}}</td>
+  </tr>
+  <tr>
+    <th>Esperienza Minima:</th>
+    <td>{{tavolo.esperienzaMin}}</td>
+  </tr>
+  <tr>
+    <th>Utente Creazione</th>
+    <td>{{tavolo.utenteCreazione.username}}</td>
+  </tr>
+</table>

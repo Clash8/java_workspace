@@ -1,0 +1,12 @@
+<tr>
+  <td></td>
+  <td>
+    <input placeholder="username" [(ngModel)]="utenteExample.username" />
+  </td>
+  <td>
+    <select [(ngModel)]="utenteExample.stato">
+      <option value="">--</option>
+      <option *ngFor="let stato of stati" [value]="stato">{{ stato }}</option>
+    </select>
+  </td>
+</tr>
